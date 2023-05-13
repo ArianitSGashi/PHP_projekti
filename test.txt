@@ -1,2 +1,6 @@
 ardit
+<<<<<<< HEAD
 ardi
+=======
+Arianit dhe Ard noobi
+>>>>>>> 52b65d0409267c0fbb4cd1bdc0525797a7da1a71

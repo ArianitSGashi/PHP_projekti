@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+    integrity="sha384-SVciGluqzLNp1SMrfS/3qiZv4Ukk9PO0zL6FLvHvjbINIUng/J9F1FmfjmwvTLHx" crossorigin="anonymous">
+  <title>Course Selection</title>
+  <style>
+    .subject-list {
+      display: none;
+    }
+
+    .add-button {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">Course Selection</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="showSubjects()">Subjects</a>
+          </li>
+          <!-- Add more menu items here -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Select a Course</h2>
+        <div class="list-group">
+          <a href="#" class="list-group-item list-group-item-action" onclick="showCourseSubjects('python')">
+            Python
+          </a>
+          <a href="#" class="list-group-item list-group-item-action" onclick="showCourseSubjects('java')">
+            Java
+          </a>
+          <!-- Add more courses here -->
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h2 id="course-title">Course Title</h2>
+        <ul class="list-group" id="subject-list">
+          <!-- Subjects will be dynamically added here -->
+        </ul>
+        <button class="btn btn-primary mt-3" id="add-button" onclick="addSubject()">Add Subject</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+    integrity="sha384-1zhrHz0ry5+W0IF2CIdwV2q//4uIKXbscLrr54P7Df1iQKwG+gYFxx+TO49Tuq9M"
+    crossorigin="anonymous"></script>
+  <script>
+    function showSubjects() {
+      document.getElementById('course-title').textContent = 'Subjects';
+      document.getElementById('subject-list').style.display = 'block';
+      document.getElementById('add-button').style.display = 'block';
+    }
+
+    function showCourseSubjects(course) {
+      // Update the course title
+      document.getElementById('course-title').textContent = course.charAt(0).toUpperCase() + course.slice(1);
+
+      // Get the subject list for the selected course
+      let subjectList;
+      if (course === 'python') {
+        subjectList = ['Subject 1', 'Subject 2', 'Subject 3'];
+      } else if (course === 'java') {
+        subjectList = ['Subject 1', 'Subject 2', 'Subject 3'];
+      }
+      // Add subjects to the list
+      const subjectListElement = document.getElementById('subject-list');
+      subjectListElement.innerHTML = '';
+      subjectList.forEach(subject => {
+        const li = document.createElement('li');
+        li.className = 'list-group-item';
+        li.textContent = subject;
+        subjectListElement.appendChild(li);
+      });
+
+      // Show the subject list and add button
+      document.getElementById('subject-list').style.display = 'block';
+      document.getElementById('add-button').style.display = 'block';
+    }
+
+    function addSubject() {
+      const subject = prompt('Enter a new subject:');
+      if (subject) {
+        const li = document.createElement('li');
+        li.className = 'list-group-item';
+        li.textContent = subject;
+
+        document.getElementById('subject-list').appendChild(li);
+      }
+    }
+  </script>
+</body>
+
+</html>
+

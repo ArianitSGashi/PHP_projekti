@@ -5,11 +5,20 @@
         <meta name="viewport" content="width=device-width, inital-scale=1.0">
         <link rel="stylesheet" href="Trajnimet.css">
         <link rel="stylesheet" type="text/css" href="stylefooter.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
-        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" 
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57Bd+AiNJwo5e9U8d4B6LdXvIliaK4miW"
+          crossorigin="anonymous">
+
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/css/bootstrap-icons.min.css">
+
+         <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js"
+          integrity="sha384-lGsMm5lx3h492F7FhbbWxEVGCMoouAT2h97q4F+ApDIno4Wp4aV5P+DXgpxcV6zX"
+          crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+         integrity="sha384-SVciGluqzLNp1SMrfS/3qiZv4Ukk9PO0zL6FLvHvjbINIUng/J9F1FmfjmwvTLHx" crossorigin="anonymous">
+        <title>Course Selection</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Professor Dashboard</title>
+    <title>Subjects</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -94,7 +103,7 @@
 
         .maindiv {
             height: 900px;
-            background-image: url("Fotot/imgslider1.jpg");
+           /* background-image: url("Fotot/imgslider1.jpg");*/
             background-size: cover;
             background-repeat: no-repeat;
             display: flex;
@@ -265,6 +274,9 @@
         button:hover {
             background-color: #45a049;
         }
+        /*======================================*/
+        
+
 
     </style>
 </head>
@@ -290,17 +302,126 @@
         </ul>
     </div>
 
-    <div class="maindiv">
-        <div class="div1">
-            <div class="formdiv">
-                
-
-                    
-            
-            
-            </div>
-        </div>                         
-    </div>
+    <div class="container mt-5">
+        <div class="row">
+          <div class="col-md-6">
+            <h2>Select a Course</h2>
+            <table class="course-table">
+              <tr>
+                <td class="course-name">
+                  <a href="#" onclick="showCourseSubjects('python')">
+                    <i class="bi bi-code-slash"></i> Python
+                  </a>
+                  <button class="add-button" onclick="addSubject()">
+                    <i class="bi bi-plus-lg"></i> Add Subject
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="course-name">
+                  <a href="#" onclick="showCourseSubjects('java')">
+                    <i class="bi bi-coffee"></i> Java
+                  </a>
+                  <button class="add-button" onclick="addSubject()">
+                    <i class="bi bi-plus-lg"></i> Add Subject
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="course-name">
+                  <a href="#" onclick="showCourseSubjects('design-graphic')">
+                    <i class="bi bi-palette"></i> Design Graphic
+                  </a>
+                  <button class="add-button" onclick="addSubject()">
+                    <i class="bi bi-plus-lg"></i> Add Subject
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="course-name">
+                  <a href="#" onclick="showCourseSubjects('full-stack')">
+                    <i class="bi bi-laptop"></i> Full Stack
+                  </a>
+                  <button class="add-button" onclick="addSubject()">
+                    <i class="bi bi-plus-lg"></i> Add Subject
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="course-name">
+                  <a href="#" onclick="showCourseSubjects('react-js')">
+                    <i class="bi bi-window"></i> React JS
+                  </a>
+                  <button class="add-button" onclick="addSubject()">
+                    <i class="bi bi-plus-lg"></i> Add Subject
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="course-name">
+                  <a href="#" onclick="showCourseSubjects('c++')">
+                    <i class="bi bi-gear-wide"></i> C++
+                  </a>
+                  <button class="add-button" onclick="addSubject()">
+                    <i class="bi bi-plus-lg"></i> Add Subject
+                  </button>
+                </td>
+              </tr>
+              <!-- Add more courses here -->
+            </table>
+          </div>
+        </div>
+      </div>
+      
+      
+      
+      
+      
+      <script>
+        function showSubjects() {
+          document.getElementById('course-title').textContent = 'Subjects';
+          document.getElementById('subject-list').style.display = 'block';
+          document.getElementById('add-button').style.display = 'block';
+        }
+    
+        function showCourseSubjects(course) {
+          // Update the course title
+          document.getElementById('course-title').textContent = course.charAt(0).toUpperCase() + course.slice(1);
+    
+          // Get the subject list for the selected course
+          let subjectList;
+          if (course === 'python') {
+            subjectList = ['Subject 1', 'Subject 2', 'Subject 3'];
+          } else if (course === 'java') {
+            subjectList = ['Subject 1', 'Subject 2', 'Subject 3'];
+          }
+          // Add subjects to the list
+          const subjectListElement = document.getElementById('subject-list');
+          subjectListElement.innerHTML = '';
+          subjectList.forEach(subject => {
+            const li = document.createElement('li');
+            li.className = 'list-group-item';
+            li.textContent = subject;
+            subjectListElement.appendChild(li);
+          });
+    
+          // Show the subject list and add button
+          document.getElementById('subject-list').style.display = 'block';
+          document.getElementById('add-button').style.display = 'block';
+        }
+    
+        function addSubject() {
+          const subject = prompt('Enter a new subject:');
+          if (subject) {
+            const li = document.createElement('li');
+            li.className = 'list-group-item';
+            li.textContent = subject;
+    
+            document.getElementById('subject-list').appendChild(li);
+          }
+        }
+      </script>
+      
     <footer >
         <div class="container">
           <!--<div class="contact-box">-->

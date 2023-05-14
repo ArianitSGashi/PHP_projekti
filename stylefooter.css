@@ -151,7 +151,7 @@ tr td{
     text-align: center;
 
 }
- .menu ul{
+.menu ul{
     display:inline-flex;
     list-style:none;
     color:#fff;

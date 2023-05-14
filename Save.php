@@ -4,19 +4,9 @@
 	<title>Save Data</title>
 </head>
 <body>
-	<?php 
+	<?php include "database.php";
 		//check if form has been submitted
 		if(isset($_POST['submit'])){
-
-			//connect to database
-			$db_host = "localhost";
-			$db_user = "your_username";
-			$db_pass = "your_password";
-			$db_name = "your_database_name";
-			$conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
-			if (!$conn) {
-    			die("Connection failed: " . mysqli_connect_error());
-			}
 
 			//sanitize input data
 			$name = mysqli_real_escape_string($conn, $_POST['name']);

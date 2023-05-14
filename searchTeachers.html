@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, inital-scale=1.0">
+        <link rel="stylesheet" href="Trajnimet.css">
+        <link rel="stylesheet" href="headerstyle.css">
+        <link rel="stylesheet" type="text/css" href="stylefooter.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Clear Student</title>
+    <style>
+     #wrapper {
+        max-width: 500px;
+        margin:0 auto;
+        margin-top: 20px;
+        border:3px solid black;
+        border-radius:10px;
+        padding:10px;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      #form label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      #form input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 15px;
+        font-size: 16px;
+      }
+
+      #form select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 15px;
+        font-size: 16px;
+      }
+
+      #form input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        width:100%;
+      }
+
+      #form input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+
+      #form button[type="button"] {
+        background-color: #f44336;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+        width:100%;
+      }
+
+      #form button[type="button"]:hover {
+        background-color: #d32f2f;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header" style="background-color:#df2d45; background-attachment: fixed;">
+      <div id="container">
+          <img src="Fotot/Logo.png" alt="logo" width="90px" height="90px">   
+          <p style="margin-left:10px;" class="texti1">Besa Institute of Technology - Admin Dashboard</p>
+      </div>
+      <form class="search-form" action="#"> 
+          <input type="text" placeholder="Search.." name="search"> 
+          <button>Search</button>
+      
+      
+      </form>
+  </header>
+  <div class="menu"> 
+      <ul>
+        <li><a href="adminProfile.html">Profile</a></li>
+        <li><a href="#">Manage Students</a>
+          <div class="nen-menu">
+              <ul>
+                  <li><a href="addStudent.html">Add Students</a></li>
+                  <li><a href="clearStudent.html">Clear Students</a></li>
+                  <li><a href="updateStudent.html">Update Students</a></li>
+                  <li><a href="searchStudents.html">Search Students</a></li>
+              </ul>
+          </div>
+          </li>
+          
+     
+        <li><a href="#">Manage Teachers</a>
+          <div class="nen-menu">
+              <ul>
+                  <li><a href="addTeachers.html">Add Teachers</a></li>
+                  <li><a href="clearTeacher.html">Clear Teachers</a></li>
+                  <li><a href="updateTeachers.html">Update Teachers</a></li>
+                  <li><a href="searchTeachers.html">Search Teachers</a></li>
+                
+              </ul>
+          </div>
+          </li>
+          <li><a href="#">Manage Courses</a>
+              <div class="nen-menu">
+                  <ul>
+                      <li><a href="addCourses.html">Add Courses</a></li>
+                      <li><a href="updateCourses.html">Update Courses</a></li>
+                      <li><a href="searchCourses.html">Search Courses</a></li>
+                      <li><a href="deleteCourses.html">Delete Courses</a></li>
+                  </ul>
+              </div>
+              </li>
+      </ul>
+ 
+    <div id="wrapper">
+        <h1>Search Teacher</h1>
+        <form id="form" action="#" method="POST">
+          <label for="id">Teacher Id:</label>
+          <input type="text" id="id" name="id" required>
+  
+          
+          <button  type="button" onclick="location.href='#';">Search Teacher</button>
+        </form>
+  
+        
+    </div>
+    <footer >
+        <div class="container">
+          <!--<div class="contact-box">-->
+            <div class="contact-left">
+                <h3 class="kontakti">Na Kontaktoni</h3>
+                <form class="forma1">
+                    <input type="text" class="hapesira" placeholder="Emri dhe Mbiemri" required><br>
+                    <input type="email" class="hapesira" placeholder="Email" required><br>
+                    <input type="tel" id="phone" class="hapesira" name="phone" placeholder="Phone Number" required>
+                    <div class="hapesira1">
+                        <select id="digital" class="hapesira" name="digital">
+                            <option value="Dizajn Grafik">Digital Marketing</option>
+                            <option value="Dizajn Grafik">Graphic Design</option>
+                            <option value="Web Development">Full Stack</option>
+                            <option value="Python">Python</option>
+                            <option value="Java">JAVA</option>
+                        </select>
+                    </div>
+                    <button class="btn" >Apliko</button>
+                </form>
+            </div>
+            <div class="contact-right">
+                <h2 class="h2">Të dhënat:</h2>
+                <br>
+                <br>
+                <br>
+                <address>
+                    <table class="table">
+                        <tr>
+                            <td>Email: </td>
+                            <td ><a style="color:white" href="mailto:besaitech@gmail.com">besaitech@gmail.com</a></td>
+                        </tr>
+                        <tr>
+                            <td>Phone: </td>
+                            <td>+383 49 175 286</td>
+                        </tr>
+                        <tr>
+                            <td>Adressa: </td>
+                            <td>Rr.Feronikeli-25, Drenas, Kosove, 13000</td>
+                        </tr>
+                    </table>
+                </address>
+                <br><br><br><br>
+                <div class="socialIcons">
+                    <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"> </i></a>
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"> </i></a>
+                    <a href="https://twitter.com/?lang=en-gb" target="_blank"><i class="fa-brands fa-twitter"> </i></a>
+                    <a href="https://gb.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin-in"> </i></a>
+                </div>
+            </div>
+        <!--</div>-->
+        </div>
+    </footer>
+  </body>
+</html>

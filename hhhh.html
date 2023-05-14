@@ -8,12 +8,23 @@
     integrity="sha384-SVciGluqzLNp1SMrfS/3qiZv4Ukk9PO0zL6FLvHvjbINIUng/J9F1FmfjmwvTLHx" crossorigin="anonymous">
   <title>Course Selection</title>
   <style>
-    .subject-list {
-      display: none;
+     table {
+      border-collapse: collapse;
+      width: 70%;
     }
-
-    .add-button {
-      display: none;
+    
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: Center;
+    }
+    
+    th {
+      background-color: #f2f2f2;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
     }
   </style>
 </head>
@@ -40,29 +51,48 @@
     </div>
   </nav>
 
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-md-6">
-        <h2>Select a Course</h2>
-        <div class="list-group">
-          <a href="#" class="list-group-item list-group-item-action" onclick="showCourseSubjects('python')">
-            Python
-          </a>
-          <a href="#" class="list-group-item list-group-item-action" onclick="showCourseSubjects('java')">
-            Java
-          </a>
-          <!-- Add more courses here -->
-        </div>
-      </div>
-      <div class="col-md-6">
-        <h2 id="course-title">Course Title</h2>
-        <ul class="list-group" id="subject-list">
-          <!-- Subjects will be dynamically added here -->
-        </ul>
-        <button class="btn btn-primary mt-3" id="add-button" onclick="addSubject()">Add Subject</button>
-      </div>
-    </div>
-  </div>
+  
+  <table>
+    <thead>
+      <tr>
+        <th colspan="3">PYTHON</th>
+      </tr>
+      <tr>
+        <th>Lënda</th>
+        <th>Përshkrimi</th>
+        <th>Fshij Lenden</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Variablat</td>
+        <td>Shërbejnë për të ruajtur dhe manipuluar të dhënat</td>
+        <td><button>Fshij</button></td>
+      </tr>
+      <tr>
+        <td>If-else</td>
+        <td>Kushtet dhe zgjidhjet alternative</td>
+        <td><button>Fshij</button></td>
+      </tr>
+      <tr>
+        <td>Ciklet</td>
+        <td>Përsëritje e një pjesë të kodit</td>
+        <td><button>Fshij</button></td>
+      </tr>
+      <tr>
+        <td>Listat</td>
+        <td>Grupim i të dhënave të ngjashme</td>
+        <td><button>Fshij</button></td>
+      </tr>
+      <tr>
+        <td>Funksionet</td>
+        <td>Bloqe të ri-përdorshme të kodit</td>
+        <td><button>Fshij</button></td>
+      </tr>
+    </tbody>
+  </table>
+  
+
 
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
     integrity="sha384-1zhrHz0ry5+W0IF2CIdwV2q//4uIKXbscLrr54P7Df1iQKwG+gYFxx+TO49Tuq9M"

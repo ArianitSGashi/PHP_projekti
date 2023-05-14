@@ -202,7 +202,7 @@
         }
         
         button {
-            background-color: #4CAF50;
+            background-color:#df2d45;
             color: white;
             padding: 10px 15px;
             border: none;
@@ -262,7 +262,7 @@
             margin-bottom: 10px;
         }
         button {
-            background-color: #4CAF50;
+            background-color: #df2d45;
             color: white;
             padding: 10px 15px;
             border: none;
@@ -275,6 +275,29 @@
             background-color: #45a049;
         }
         /*======================================*/
+        #tbl1 {
+            border: 2px solid black;
+      border-collapse:collapse;
+      width: 90%;
+      margin: 70px;
+      
+    }
+    
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: Center;
+    }
+    
+    th {
+      background-color:#f2f2f2;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+       
+ 
         
 
 
@@ -302,125 +325,116 @@
         </ul>
     </div>
 
-    <div class="container mt-5">
-        <div class="row">
-          <div class="col-md-6">
-            <h2>Select a Course</h2>
-            <table class="course-table">
-              <tr>
-                <td class="course-name">
-                  <a href="#" onclick="showCourseSubjects('python')">
-                    <i class="bi bi-code-slash"></i> Python
-                  </a>
-                  <button class="add-button" onclick="addSubject()">
-                    <i class="bi bi-plus-lg"></i> Add Subject
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td class="course-name">
-                  <a href="#" onclick="showCourseSubjects('java')">
-                    <i class="bi bi-coffee"></i> Java
-                  </a>
-                  <button class="add-button" onclick="addSubject()">
-                    <i class="bi bi-plus-lg"></i> Add Subject
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td class="course-name">
-                  <a href="#" onclick="showCourseSubjects('design-graphic')">
-                    <i class="bi bi-palette"></i> Design Graphic
-                  </a>
-                  <button class="add-button" onclick="addSubject()">
-                    <i class="bi bi-plus-lg"></i> Add Subject
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td class="course-name">
-                  <a href="#" onclick="showCourseSubjects('full-stack')">
-                    <i class="bi bi-laptop"></i> Full Stack
-                  </a>
-                  <button class="add-button" onclick="addSubject()">
-                    <i class="bi bi-plus-lg"></i> Add Subject
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td class="course-name">
-                  <a href="#" onclick="showCourseSubjects('react-js')">
-                    <i class="bi bi-window"></i> React JS
-                  </a>
-                  <button class="add-button" onclick="addSubject()">
-                    <i class="bi bi-plus-lg"></i> Add Subject
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td class="course-name">
-                  <a href="#" onclick="showCourseSubjects('c++')">
-                    <i class="bi bi-gear-wide"></i> C++
-                  </a>
-                  <button class="add-button" onclick="addSubject()">
-                    <i class="bi bi-plus-lg"></i> Add Subject
-                  </button>
-                </td>
-              </tr>
-              <!-- Add more courses here -->
-            </table>
-          </div>
-        </div>
-      </div>
-      
-      
-      
-      
-      
-      <script>
-        function showSubjects() {
-          document.getElementById('course-title').textContent = 'Subjects';
-          document.getElementById('subject-list').style.display = 'block';
-          document.getElementById('add-button').style.display = 'block';
+    <script>
+        function fshijRresht(rreshti) {
+          rreshti.parentNode.removeChild(rreshti);
         }
-    
-        function showCourseSubjects(course) {
-          // Update the course title
-          document.getElementById('course-title').textContent = course.charAt(0).toUpperCase() + course.slice(1);
-    
-          // Get the subject list for the selected course
-          let subjectList;
-          if (course === 'python') {
-            subjectList = ['Subject 1', 'Subject 2', 'Subject 3'];
-          } else if (course === 'java') {
-            subjectList = ['Subject 1', 'Subject 2', 'Subject 3'];
-          }
-          // Add subjects to the list
-          const subjectListElement = document.getElementById('subject-list');
-          subjectListElement.innerHTML = '';
-          subjectList.forEach(subject => {
-            const li = document.createElement('li');
-            li.className = 'list-group-item';
-            li.textContent = subject;
-            subjectListElement.appendChild(li);
-          });
-    
-          // Show the subject list and add button
-          document.getElementById('subject-list').style.display = 'block';
-          document.getElementById('add-button').style.display = 'block';
-        }
-    
-        function addSubject() {
-          const subject = prompt('Enter a new subject:');
-          if (subject) {
-            const li = document.createElement('li');
-            li.className = 'list-group-item';
-            li.textContent = subject;
-    
-            document.getElementById('subject-list').appendChild(li);
-          }
-        }
+        function shtoLenden() {
+             var tabela = document.getElementById("tbl1");
+             
+             console.log(tabela); // Kontrollo objektin tabela në konsolë
+             
+             if (tabela instanceof HTMLTableElement) {
+               // Vetëm nëse objekti tabela është tabela, përdor metoden insertRow()
+               
+               var emriLendes = prompt("Emri i lëndës:");
+               var pershkrimi = prompt("Përshkrimi i lëndës:");
+               
+               var rreshti = tabela.insertRow(-1);
+               var td1 = rreshti.insertCell(0);
+               var td2 = rreshti.insertCell(1);
+               var td3 = rreshti.insertCell(2);
+               
+               td1.innerHTML = emriLendes;
+               td2.innerHTML = pershkrimi;
+               td3.innerHTML = '<button onclick="fshijRresht(this.parentNode.parentNode)">Fshij</button>';
+             } else {
+               console.log("Elementi me ID-në 'tbl1' nuk është tabela.");
+             }
+           }
       </script>
+    </head>
+    
+      <table id="tbl1">
+        <thead>
+          <tr>
+            <th colspan="3">PYTHON <button onclick="shtoLenden()">Shto Lëndën</button></th>
+          </tr>
+          <tr>
+            <th>Lënda</th>
+            <th>Përshkrimi</th>
+            <th>Fshij Lenden</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Variablat</td>
+            <td>Shërbejnë për të ruajtur dhe manipuluar të dhënat</td>
+            <td><button onclick="fshijRresht(this.parentNode.parentNode)">Fshij</button></td>
+          </tr>
+          <tr>
+            <td>If-else</td>
+            <td>Kushtet dhe zgjidhjet alternative</td>
+            <td><button onclick="fshijRresht(this.parentNode.parentNode)">Fshij</button></td>
+          </tr>
+          <tr>
+            <td>Ciklet</td>
+            <td>Përsëritje e një pjesë të kodit</td>
+            <td><button onclick="fshijRresht(this.parentNode.parentNode)">Fshij</button></td>
+          </tr>
+          <tr>
+            <td>Listat</td>
+            <td>Grupim i të dhënave të ngjashme</td>
+            <td><button onclick="fshijRresht(this.parentNode.parentNode)">Fshij</button></td>
+          </tr>
+          <tr>
+            <td>Funksionet</td>
+            <td>Bloqe të ri-përdorshme të kodit</td>
+            <td><button onclick="fshijRresht(this.parentNode.parentNode)">Fshij</button></td>
+          </tr>
+        </tbody>
+      </table>
+
+      
+      <table id="tbl1">
+        <thead>
+          <tr>
+            <th colspan="3">Java <button onclick="shtoLenden()">Shto Lëndën</button></th>
+          </tr>
+          <tr>
+            <th>Lënda</th>
+            <th>Përshkrimi</th>
+            <th>Fshij Lenden</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Variablat</td>
+            <td>Shërbejnë për të ruajtur dhe manipuluar të dhënat</td>
+            <td><button onclick="fshijRresht(this.parentNode.parentNode)">Fshij</button></td>
+          </tr>
+          <tr>
+            <td>If-else</td>
+            <td>Kushtet dhe zgjidhjet alternative</td>
+            <td><button onclick="fshijRresht(this.parentNode.parentNode)">Fshij</button></td>
+          </tr>
+          <tr>
+            <td>Ciklet</td>
+            <td>Përsëritje e një pjesë të kodit</td>
+            <td><button onclick="fshijRresht(this.parentNode.parentNode)">Fshij</button></td>
+          </tr>
+          <tr>
+            <td>Listat</td>
+            <td>Grupim i të dhënave të ngjashme</td>
+            <td><button onclick="fshijRresht(this.parentNode.parentNode)">Fshij</button></td>
+          </tr>
+          <tr>
+            <td>Funksionet</td>
+            <td>Bloqe të ri-përdorshme të kodit</td>
+            <td><button onclick="fshijRresht(this.parentNode.parentNode)">Fshij</button></td>
+          </tr>
+        </tbody>
+      </table>
       
     <footer >
         <div class="container">
@@ -454,7 +468,7 @@
                             <td>Email: </td>
                             <td ><a style="color:white" href="mailto:besaitech@gmail.com">besaitech@gmail.com</a></td>
                         </tr>
-                        <tr>
+                        <tr style="color:#df2d45">
                             <td>Phone: </td>
                             <td>+383 49 175 286</td>
                         </tr>

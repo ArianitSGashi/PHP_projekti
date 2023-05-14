@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Apliko per trajnim</title>
+        <link rel="stylesheet" href="FormularStyle.css">
+
+    </head>
+    <body class="body-form">
+    
+            <div class="container">
+                <div class="titulli">
+                    <h2>Aplikoni tani!</h2><br>
+                    <h3>Plotësoni të dhënat</h3>
+                </div>
+                <form class="form" id="form">
+                    <div class="form-control">
+                        <label id="username">Emri: </label>
+                        <input type="text"  id="username" required>
+                        
+
+                        <label id="surname">Mbiemri: </label>
+                        <input type="text"  id="surname" required>
+                        
+
+                        <label id="nrtel">Numri i telefonit: </label>
+                        <input type="tel"  id="nrtel" required>
+
+                        <label id="email">Email: </label>
+                        <input type="email"  id="email" required>
+
+                        <div class="moshaElement">
+                            <label for="mosha">Mosha: </label>
+                            <input type="text" name="mosha"  required>
+                        </div>
+                        
+
+                        <div class="radioElement">
+                        <label>Gjinia:  </label>
+                        <input type="radio" id="femer" name="gender" value="femer">
+                        <label for="femer">Femer</label>
+                        <input type="radio" id="mashkull" name="gender" value="mashkull">
+                        <label for="mashkull">Mashkull</label>
+                        </div>
+                        <br>
+
+                        <label for="trajnimet">Zgjedheni trajnimin:</label>
+                        <select id="trajnimet" name="trajnimet">
+                          <option value="opsioni1">Digital Marketing</option>
+                          <option value="opsioni2">Graphic Design</option>
+                          <option value="opsinoi3">Full Stack Development</option>
+                          <option value="opsioni4">Cyber Security</option>
+                          <option value="opsinoi5">Python</option>
+                          <option value="opsioni6">Mobile App</option>
+                          </select>
+                          <br><br>
+                        
+                          <div class="checkboxElement">
+                            <label>Si dëshironi të ndjekni kursin? </label><br>
+                            <label for="orari1">Fizikisht</label>
+                            <input type="checkbox" id="orari1" name="orari1" value="Fizikisht">
+                            <label for="orari2">Online</label>
+                            <input type="checkbox" id="orari2" name="orari2" value="Online">
+                        </div>
+                        <br>
+
+                        <button id="submit" type="submit" class="btn btn-primary">Aplikoni</button>
+
+                        
+                        
+
+
+                    </div>
+
+                </form>
+            </div>
+
+        
+    </body>
+</html>

@@ -1,0 +1,127 @@
+.search-form{
+    margin-top:15px;
+    float:right;
+    margin-right:100px;/**/
+    border: radius 1px;
+}
+.search-form input[type=text]
+{
+    padding:7px;
+    border:none;
+    font-size:16px;
+    font-family:sans-serif;
+} 
+.search-form button{
+    float:right;
+    background:black;
+    color:white;
+    border-radius:0 5px 5px 0;
+    cursor:pointer;
+    position:relative;
+    padding:7px;
+    font-family:sans-serif;
+    border:none;
+    font-size:16px;
+
+} 
+.butoni{
+    background-color: #df2d45;
+    cursor: pointer;
+    width: 400px;
+    height: 40px;
+    margin-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid  #df2d45;;
+    border-radius: 14px;
+    outline: none;
+    color: white;
+    font-size:20px;
+
+}
+.butoni:hover{
+    color: green;
+    background-color: lightcoral;
+}
+
+.butoni1{
+    background-color: #df2d45;
+    cursor: pointer;
+    width: 200px;
+    height: 40px;
+    margin-bottom: 20px;
+    margin-top: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid  #df2d45;;
+    border-radius: 14px;
+    outline: none;
+    color: white;
+    font-size:20px;
+
+}
+.butoni1:hover{
+    color: green;
+    background-color: lightcoral;
+}
+.maindiv {
+height: 600px;
+background-image: url("Fotot/Foto5.jpg");
+background-size: cover;
+background-repeat: no-repeat;
+display: flex;
+flex-direction: row;
+flex-wrap: nowrap;
+justify-content: center;       
+width: 92%;    
+border-radius: 15px; 
+margin: 50px;
+}
+
+.div1 {
+margin: 100px;
+margin-left: 200px;
+padding-left: 100px;
+color: white;
+font-weight: bold;
+font-size: large;
+
+}
+
+.inputtext, .inputemail, .inputtel, .select {
+width: 100%;
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+
+.submit {
+width: 100%;
+background-color: #df2d45;
+color: white;
+padding: 14px 20px;
+margin: 8px 0;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+.submit:hover {
+background-color: #7f3223;
+}
+
+.formdiv {
+margin: 100px;
+margin-right: 280px;
+padding-top: 30px;
+border-radius: 5px;
+background-color: #1014936b;
+padding-inline: 50px;
+float: left;
+width: 100%;
+}
+
+

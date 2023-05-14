@@ -5,11 +5,20 @@
         <meta name="viewport" content="width=device-width, inital-scale=1.0">
         <link rel="stylesheet" href="Trajnimet.css">
         <link rel="stylesheet" type="text/css" href="stylefooter.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
-        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" 
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57Bd+AiNJwo5e9U8d4B6LdXvIliaK4miW"
+          crossorigin="anonymous">
+
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/css/bootstrap-icons.min.css">
+
+         <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js"
+          integrity="sha384-lGsMm5lx3h492F7FhbbWxEVGCMoouAT2h97q4F+ApDIno4Wp4aV5P+DXgpxcV6zX"
+          crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+         integrity="sha384-SVciGluqzLNp1SMrfS/3qiZv4Ukk9PO0zL6FLvHvjbINIUng/J9F1FmfjmwvTLHx" crossorigin="anonymous">
+        <title>Course Selection</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Professor Dashboard</title>
+    <title>Subjects</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -39,7 +48,7 @@
         .search-form{
                 margin-top:15px;
                 float:right;
-                margin-right:100px;/**/
+                margin-right:100px;
                 border: radius 1px;
         }
             .search-form input[type=text]
@@ -63,10 +72,9 @@
             
         } 
 
-
         .maindiv {
             height: 900px;
-             background-image: url("Fotot/imgslider1.jpg");
+           /* background-image: url("Fotot/imgslider1.jpg");*/
             background-size: cover;
             background-repeat: no-repeat;
             display: flex;
@@ -165,7 +173,7 @@
         }
         
         button {
-            background-color: #4CAF50;
+            background-color:#df2d45;
             color: white;
             padding: 10px 15px;
             border: none;
@@ -207,6 +215,63 @@
         .footer a:hover {
             text-decoration: underline;
         }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #df2d45;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        /*======================================*/
+        #tbl1 {
+            border: 2px solid black;
+      border-collapse:collapse;
+      width: 90%;
+      margin: 70px;
+      
+    }
+    
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: Center;
+    }
+    
+    th {
+      background-color:#f2f2f2;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+       
+ 
+        
+
+
     </style>
 </head>
 <body>
@@ -231,7 +296,7 @@
                 <div class="nen-menu">
                     <ul>
                         <li><a href="pythondash.html">Python</a></li>
-                        <li><a href="#">Java</a></li>
+                        <li><a href="javadash.html">Java</a></li>
                         <li><a href="#">Graphic Design</a></li>
                         <li><a href="#">Full Stack</a></li>
                     </ul>
@@ -242,41 +307,78 @@
         </ul>
     </div>
 
-    <div class="maindiv">
-        <div class="div1">
-            <div class="formdiv">
-                <form>
-                    <h2>Add New Course</h2>
-                    <div>
-                        <label for="courseName">Course Name:</label>
-                        <input type="text" id="courseName" name="courseName" required>
-                    </div>
-                    <div>
-                        <label for="description">Description:</label>
-                        <textarea id="description" name="description" rows="4" required></textarea>
-                    </div>
-                    <div>
-                        <label for="price">Price:</label>
-                        <input type="number" id="price" name="price" min="0" step="0.01" required>
-                    </div>
-                    <div>
-                        <label for="startDate">Start Date:</label>
-                        <input type="date" id="startDate" name="startDate" required>
-                    </div>
-                    <br>
-                    <div>
-                        <label for="endDate">End Date:</label>
-                        <input type="date" id="endDate" name="endDate" required>
-                    </div>
-                    <br>
-                    <div>
-                        <button type="submit">Add Course</button>
-                    </div>
-                </form>
-                
-            </div>
-        </div>
-    </div>
+    <script>
+        function fshijRresht(rreshti) {
+          rreshti.parentNode.removeChild(rreshti);
+        }
+        function shtoLenden() {
+             var tabela = document.getElementById("tbl1");
+             
+             console.log(tabela); // Kontrollo objektin tabela në konsolë
+             
+             if (tabela instanceof HTMLTableElement) {
+               // Vetëm nëse objekti tabela është tabela, përdor metoden insertRow()
+               
+               var emriLendes = prompt("Emri i lëndës:");
+               var pershkrimi = prompt("Përshkrimi i lëndës:");
+               
+               var rreshti = tabela.insertRow(-1);
+               var td1 = rreshti.insertCell(0);
+               var td2 = rreshti.insertCell(1);
+               var td3 = rreshti.insertCell(2);
+               
+               td1.innerHTML = emriLendes;
+               td2.innerHTML = pershkrimi;
+               td3.innerHTML = '<button onclick="fshijRresht(this.parentNode.parentNode)">Fshij</button>';
+             } else {
+               console.log("Elementi me ID-në 'tbl1' nuk është tabela.");
+             }
+           }
+      </script>
+    
+    
+      <table id="tbl1">
+        <thead>
+          <tr>
+            <th colspan="3">PYTHON <button onclick="shtoLenden()">Shto Lëndën</button></th>
+          </tr>
+          <tr>
+            <th>Lënda</th>
+            <th>Përshkrimi</th>
+            <th>Fshij Lenden</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Variablat</td>
+            <td>Shërbejnë për të ruajtur dhe manipuluar të dhënat</td>
+            <td><button onclick="fshijRresht(this.parentNode.parentNode)">Fshij</button></td>
+          </tr>
+          <tr>
+            <td>If-else</td>
+            <td>Kushtet dhe zgjidhjet alternative</td>
+            <td><button onclick="fshijRresht(this.parentNode.parentNode)">Fshij</button></td>
+          </tr>
+          <tr>
+            <td>Ciklet</td>
+            <td>Përsëritje e një pjesë të kodit</td>
+            <td><button onclick="fshijRresht(this.parentNode.parentNode)">Fshij</button></td>
+          </tr>
+          <tr>
+            <td>Listat</td>
+            <td>Grupim i të dhënave të ngjashme</td>
+            <td><button onclick="fshijRresht(this.parentNode.parentNode)">Fshij</button></td>
+          </tr>
+          <tr>
+            <td>Funksionet</td>
+            <td>Bloqe të ri-përdorshme të kodit</td>
+            <td><button onclick="fshijRresht(this.parentNode.parentNode)">Fshij</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <br>
+      
     <footer >
         <div class="container">
           <!--<div class="contact-box">-->
@@ -309,7 +411,7 @@
                             <td>Email: </td>
                             <td ><a style="color:white" href="mailto:besaitech@gmail.com">besaitech@gmail.com</a></td>
                         </tr>
-                        <tr>
+                        <tr style="color:#df2d45">
                             <td>Phone: </td>
                             <td>+383 49 175 286</td>
                         </tr>

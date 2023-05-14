@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Website për trajnime</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Website për trajnime</h1>
+    <div id="teachers"></div>
+
+    <script>
+        $(document).ready(function() {
+            // Kërkesa AJAX për të marrë trajnimet e mësuesve
+            $.ajax({
+                url: "leximi.php",
+                method: "GET",
+                dataType: "json",
+                success: function(response) {
+                    // Përpunoni të dhënat e kthyer
+                    var teacher1 = response;
+                    // Tregojeni trajnimet në faqe
+                    teacher1.forEach(function(teacher1) {
+                        $("#teachers").append("<p>" + teacher1.teacher1 + "</p>");
+                    });
+                },
+                error: function(xhr, status, error) {
+                    console.log(error);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

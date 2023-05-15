@@ -3,7 +3,7 @@
 <head>
     <title>Trajnime në gjuhën e IT - Materials</title>
     <style>
-        /* Stilizimi për faqen e re */
+        
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -73,7 +73,7 @@
         <h2>Materials</h2>
         <ul class="material-list">
         <?php
-            // Array me materialet e kursit dhe të dhënat e tyre shtesë
+
             $materialet = array(
                 array(
                     'titulli' => 'Materialet e kursit 1',
@@ -90,10 +90,8 @@
                     'pershkrimi' => 'Ky kurs përmban një seri video-leksione që përshkruajnë metodologjitë më të fundit për zhvillimin e aplikacioneve mobile.',
                     'linku' => '#'
                 )
-                // Shtoni materialet e tjera të nevojshme për trajnimin në gjuhën e IT
             );
 
-            // Krijo një element <li> për çdo material në listën e materialeve
             foreach ($materialet as $material) {
                 echo "<li>";
                 echo "<h3>{$material['titulli']}</h3>";

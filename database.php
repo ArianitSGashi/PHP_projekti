@@ -1,7 +1,7 @@
 <?php
-    $servername='localhost:3306';
+    $servername='localhost:3307';
     $username='root';
-    $password='#niti1db3ms';
+    $password='';
     $dbname = "php_projekti";
     $conn=mysqli_connect($servername,$username,$password,$dbname);
       if(!$conn){

@@ -159,24 +159,24 @@
     <div id="div1">
     <div id="wrapper"  >
       <h1 style="text-align:center">Add Student</h1>
-      <form id="form" action="#" method="POST">
+      <form id="form" action="addStudent.php" method="POST">
 
         <label for="id">Student Id:</label>
-		    <input type="text" id="id" name="id" required>
+		    <input type="text" id="student_id" name="student_id" required>
 
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required />
+        <input type="text" id="student_name" name="student_name" required />
 
         <label for="lastname">Last Name:</label>
-        <input type="text" id="lastname" name="lastname" required />
+        <input type="text" id="student_lastName" name="student_lastName" required />
 
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required />
 
         <label for="gender">Gender:</label>
-        <select>
-          <option name="Male">Male</option>
-          <option name="Female">Female</option>
+        <select id="gender" name="gender">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
         </select>
 
 
@@ -185,7 +185,7 @@
 		<input type="tel" id="phone" name="phone">
 
 		<label for="address">Address:</label>
-		<textarea id="address" name="address"></textarea>
+		<textarea id="city" name="city"></textarea>
 
         
 
